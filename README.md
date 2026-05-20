@@ -1,5 +1,8 @@
 # F1 Analytics — Frontend
 
+> **Repo:** [ashutoshswamy/f1-analytics](https://github.com/ashutoshswamy/f1-analytics)  
+> **Backend:** [ashutoshswamy/f1-analytics-backend](https://github.com/ashutoshswamy/f1-analytics-backend)
+
 Next.js web dashboard for the F1 Analytics platform. Displays live race data, standings, telemetry comparisons, and qualifying results — all sourced from the FastAPI backend.
 
 ## Stack
@@ -21,13 +24,15 @@ Next.js web dashboard for the F1 Analytics platform. Displays live race data, st
 ## Setup
 
 ```bash
+git clone https://github.com/ashutoshswamy/f1-analytics
+cd f1-analytics
 npm install
 npm run dev
 ```
 
 Dashboard runs at `http://localhost:3000`.
 
-**The backend must be running** at `http://localhost:8000` before opening the dashboard. See `../backend/README.md`.
+**The backend must be running** at `http://localhost:8000` before opening the dashboard. See the [backend repo](https://github.com/ashutoshswamy/f1-analytics-backend) for setup instructions.
 
 ## Available Scripts
 
