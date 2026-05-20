@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+:root {
+  --background: #090a0f;
+  --foreground: #f3f4f6;
+  --f1-red: #e10600;
+  --f1-red-glow: rgba(225, 6, 0, 0.4);
+  --card-bg: rgba(16, 18, 27, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover-border: rgba(225, 6, 0, 0.5);
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --sidebar-bg: #0f111a;
+  --table-header-bg: #141824;
+  --table-row-hover: rgba(225, 6, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle carbon fiber pattern overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.004) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.004) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.004) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.004) 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Premium Layout Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Glassmorphic Panel Cards */
+.f1-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  position: relative;
+  overflow: hidden;
+}
+
+.f1-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--f1-red), transparent);
+  opacity: 0.8;
+}
+
+.f1-card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 8px 32px 0 var(--f1-red-glow);
+  transform: translateY(-2px);
+}
+
+/* Neon Red Lighting Glow Text */
+.glow-text {
+  text-shadow: 0 0 10px var(--f1-red-glow), 0 0 20px rgba(225, 6, 0, 0.2);
+}
+
+.f1-badge {
+  background: rgba(225, 6, 0, 0.15);
+  border: 1px solid var(--f1-red);
+  color: #ff4d4d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Clean Premium Tables */
+.f1-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+
+.f1-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.f1-table th {
+  background-color: var(--table-header-bg);
+  color: var(--text-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 1rem;
+  border-bottom: 2px solid var(--f1-red);
+}
+
+.f1-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.f1-table tr:last-child td {
+  border-bottom: none;
+}
+
+.f1-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.f1-table tbody tr:hover {
+  background-color: var(--table-row-hover);
+}
+
+/* Custom Select Forms */
+.f1-select, .f1-input {
+  background: #141722;
+  border: 1px solid var(--card-border);
+  color: var(--foreground);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.f1-select:focus, .f1-input:focus {
+  border-color: var(--f1-red);
+  box-shadow: 0 0 0 2px var(--f1-red-glow);
+}
+
+/* Red Button accents */
+.f1-btn {
+  background-color: var(--f1-red);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.f1-btn:hover {
+  background-color: #ff1a13;
+  box-shadow: 0 0 15px var(--f1-red-glow);
+  transform: translateY(-1px);
+}
+
+.f1-btn:disabled {
+  background-color: #4b1a1a;
+  color: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading animations */
+.f1-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(225, 6, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--f1-red);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Custom Tab styling */
+.f1-tab-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.f1-tab-btn.active {
+  color: var(--f1-red);
+  border-bottom-color: var(--f1-red);
+}
+
+.f1-tab-btn:hover:not(.active) {
+  color: var(--text-primary);
+  border-bottom-color: var(--card-border);
+}
+
+/* Circuit Sector Card styles */
+.sector-line {
+  height: 4px;
+  background: linear-gradient(90deg, #e10600, #ff8000, #00e1d9);
+  border-radius: 2px;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.sector-node {
+  position: absolute;
+  top: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #000;
+}
