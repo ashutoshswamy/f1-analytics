@@ -46,8 +46,8 @@ export default function StandingsPage() {
   useEffect(() => {
     let active = true;
     const apiEndpoint = standingsTab === "drivers" 
-      ? `http://localhost:8000/api/standings/drivers?year=${year}`
-      : `http://localhost:8000/api/standings/teams?year=${year}`;
+      ? `https://f1analytics.ashutoshswamy.in/api/standings/drivers?year=${year}`
+      : `https://f1analytics.ashutoshswamy.in/api/standings/teams?year=${year}`;
 
     fetch(apiEndpoint)
       .then((res) => {

@@ -26,9 +26,9 @@ export default function ResultsPage() {
     setQualiData(null);
     setTrackData(null);
 
-    const raceUrl = `http://localhost:8000/api/results?year=${year}&location=${encodeURIComponent(location)}`;
-    const qualiUrl = `http://localhost:8000/api/quali?year=${year}&location=${encodeURIComponent(location)}`;
-    const trackUrl = `http://localhost:8000/api/track?year=${year}&location=${encodeURIComponent(location)}`;
+    const raceUrl = `https://f1analytics.ashutoshswamy.in/api/results?year=${year}&location=${encodeURIComponent(location)}`;
+    const qualiUrl = `https://f1analytics.ashutoshswamy.in/api/quali?year=${year}&location=${encodeURIComponent(location)}`;
+    const trackUrl = `https://f1analytics.ashutoshswamy.in/api/track?year=${year}&location=${encodeURIComponent(location)}`;
 
     Promise.all([
       fetch(raceUrl).then(res => res.ok ? res.json() : null),

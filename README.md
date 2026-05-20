@@ -30,9 +30,7 @@ npm install
 npm run dev
 ```
 
-Dashboard runs at `http://localhost:3000`.
-
-**The backend must be running** at `http://localhost:8000` before opening the dashboard. See the [backend repo](https://github.com/ashutoshswamy/f1-analytics-backend) for setup instructions.
+Dashboard runs at `http://localhost:3000`. API calls go to the hosted backend at `https://f1analytics.ashutoshswamy.in`.
 
 ## Available Scripts
 

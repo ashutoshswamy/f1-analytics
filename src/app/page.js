@@ -14,7 +14,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     // Fetch Next Race Countdown
-    fetch("http://localhost:8000/api/next_race")
+    fetch("https://f1analytics.ashutoshswamy.in/api/next_race")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load next race");
         return res.json();
@@ -29,7 +29,7 @@ export default function Dashboard() {
       });
 
     // Fetch Last Race Results
-    fetch("http://localhost:8000/api/last_race")
+    fetch("https://f1analytics.ashutoshswamy.in/api/last_race")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load last race");
         return res.json();

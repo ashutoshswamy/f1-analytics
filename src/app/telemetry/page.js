@@ -88,7 +88,7 @@ export default function TelemetryPage() {
     setTelemetryData(null);
     setChartData([]);
 
-    const url = `http://localhost:8000/api/telemetry?year=${year}&location=${encodeURIComponent(location)}&driver1=${driver1.trim()}&driver2=${driver2.trim()}`;
+    const url = `https://f1analytics.ashutoshswamy.in/api/telemetry?year=${year}&location=${encodeURIComponent(location)}&driver1=${driver1.trim()}&driver2=${driver2.trim()}`;
 
     fetch(url)
       .then((res) => {
